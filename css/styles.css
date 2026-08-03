@@ -1,0 +1,258 @@
+/* ================================
+   Base styles
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1f2933;
+    background-color: #ffffff;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ================================
+   Header and navigation
+================================ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #111827;
+    color: #ffffff;
+}
+
+.navbar {
+    width: min(1100px, 90%);
+    min-height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   Hero section
+================================ */
+
+.hero {
+    min-height: calc(100vh - 72px);
+    padding: 6rem 0;
+    display: flex;
+    align-items: center;
+    background-color: #eaf2ff;
+}
+
+.hero-content {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.eyebrow {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    line-height: 1.05;
+}
+
+.hero h2 {
+    max-width: 800px;
+    margin: 1.5rem 0 0;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin: 1.5rem 0 0;
+    font-size: 1.15rem;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+/* ================================
+   Buttons
+================================ */
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.25rem;
+    border: 2px solid #1d4ed8;
+    border-radius: 0.4rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.primary-button {
+    color: #ffffff;
+    background-color: #1d4ed8;
+}
+
+.secondary-button {
+    color: #1d4ed8;
+    background-color: transparent;
+}
+
+.button:hover,
+.button:focus {
+    opacity: 0.85;
+}
+
+
+/* ================================
+   Page sections
+================================ */
+
+.section {
+    padding: 5rem 0;
+}
+
+.alternate-section {
+    background-color: #f3f4f6;
+}
+
+.section-container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.section h2 {
+    margin-top: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-container > p {
+    max-width: 800px;
+}
+
+
+/* ================================
+   Project cards
+================================ */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.project-card {
+    padding: 1.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.technology-list {
+    font-weight: 700;
+}
+
+
+/* ================================
+   Skills
+================================ */
+
+.skills-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.skills-list li {
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    background-color: #e5e7eb;
+    font-weight: 700;
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+.site-footer {
+    padding: 2rem;
+    color: #ffffff;
+    background-color: #111827;
+    text-align: center;
+}
+
+
+/* ================================
+   Responsive design
+================================ */
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 1rem 0;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}

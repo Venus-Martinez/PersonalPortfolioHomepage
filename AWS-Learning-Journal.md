@@ -39,12 +39,28 @@
 
 ---
 
+## Amazon Bedrock Playground
+
+- Explored Amazon Bedrock and the Playground interface.
+- Selected the Amazon Nova Lite foundation model.
+- Learned how to interact with a large language model using natural language prompts.
+- Generated explanations about serverless computing.
+- Compared Amazon EC2 and AWS Lambda using AI-generated responses.
+- Used the model to generate Python source code.
+- Generated content suitable for a software developer portfolio, including a welcome message, professional biography, and portfolio slogan.
+- Explored the Bedrock Model Catalog and observed the variety of available foundation models from Amazon and third-party providers.
+- Gained experience using generative AI services hosted within AWS.
+
+---
+
 ## Reflection
 
-Today demonstrated two different approaches to hosting web content on AWS.
+Today's work demonstrated three different areas of AWS: cloud infrastructure, serverless computing, and generative AI.
 
-Using **Amazon EC2** required creating and managing a virtual server, installing Apache, configuring networking, and maintaining the operating system. In contrast, **AWS Lambda** eliminated server management entirely, allowing the webpage to be generated directly from a Python function executed on demand.
+Using **Amazon EC2** required provisioning and managing a virtual server, installing software, configuring networking, and maintaining the operating system. In contrast, **AWS Lambda** eliminated server management by executing Python code only when requests were received, making it a true serverless solution.
 
-I also gained practical troubleshooting experience by resolving an AWS KMS permission issue during Lambda deployment. Although the initial deployment failed, identifying the cause and using the appropriate configuration resulted in a successful serverless web application.
+I also gained valuable troubleshooting experience by resolving an AWS KMS permission issue during Lambda deployment. Identifying the root cause and selecting the appropriate configuration allowed the deployment to succeed.
 
-This exercise reinforced the differences between infrastructure-based computing (EC2) and serverless computing (Lambda), and showed how AWS provides multiple ways to deploy web applications depending on the project's requirements.
+Finally, I explored **Amazon Bedrock**, AWS's generative AI platform. By interacting with the Nova Lite foundation model, I generated technical explanations, Python code, and professional portfolio content, demonstrating how foundation models can assist with software development, documentation, and content creation.
+
+Overall, today's activities strengthened my understanding of several core AWS services and highlighted how AWS supports both traditional cloud infrastructure and modern serverless and AI-powered application development.

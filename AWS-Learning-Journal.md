@@ -1,8 +1,8 @@
 # AWS Learning Journal
 
-# August 9, 2026
+## August 9, 2026
 
-## IAM & AWS Permissions
+### IAM & AWS Permissions
 
 - Explored AWS Identity and Access Management (IAM) users, roles, and permissions.
 - Investigated a Lambda deployment failure related to AWS KMS permissions.
@@ -12,7 +12,7 @@
 
 ---
 
-## EC2 Web Server
+### EC2 Web Server
 
 - Launched an Amazon Linux 2023 EC2 instance.
 - Connected to the instance using SSH from Windows PowerShell.
@@ -26,7 +26,7 @@
 
 ---
 
-## AWS Lambda Serverless Web Application
+### AWS Lambda Serverless Web Application
 
 - Created an AWS Lambda function using Python 3.14.
 - Learned the structure of a Python Lambda handler (`lambda_handler(event, context)`).
@@ -41,7 +41,7 @@
 
 ---
 
-## Amazon Bedrock Playground
+### Amazon Bedrock Playground
 
 - Explored Amazon Bedrock and the Playground interface.
 - Selected the Amazon Nova Lite foundation model.
@@ -55,7 +55,7 @@
 
 ---
 
-## Reflection
+### Reflection
 
 Today's work demonstrated three different areas of AWS: cloud infrastructure, serverless computing, and generative AI.
 
@@ -67,17 +67,17 @@ Finally, I explored **Amazon Bedrock**, AWS's generative AI platform. By interac
 
 Overall, today's activities strengthened my understanding of several core AWS services and highlighted how AWS supports both traditional cloud infrastructure and modern serverless and AI-powered application development.
 
-# August 10, 2026
+## August 10, 2026
 
-## Amazon RDS & MySQL
+### Amazon RDS & MySQL
 
-### Objective
+#### Objective
 
 Learn how to create, configure, connect to, and manage a relational database hosted in Amazon RDS using MySQL.
 
 ---
 
-### Services Used
+#### Services Used
 
 - Amazon RDS
 - Amazon VPC
@@ -87,7 +87,7 @@ Learn how to create, configure, connect to, and manage a relational database hos
 
 ---
 
-### What I Built
+#### What I Built
 
 - Created an Amazon RDS MySQL Community database instance.
 - Selected the Free Tier `db.t4g.micro` instance type.
@@ -98,7 +98,17 @@ Learn how to create, configure, connect to, and manage a relational database hos
 
 ---
 
-### SQL Commands Practiced
+#### Concepts Learned
+
+- Amazon RDS is a managed relational database service.
+- A DB instance hosts one or more databases.
+- Security Groups control network access to the database.
+- Public accessibility determines whether external clients can connect.
+- MySQL Workbench is a graphical SQL client for interacting with MySQL databases.
+
+---
+
+#### SQL Commands Practiced
 
 Verified the database version:
 
@@ -143,7 +153,7 @@ SELECT * FROM visitors;
 
 ---
 
-### Skills Learned
+#### Skills Learned
 
 - Created an Amazon RDS MySQL database.
 - Connected to a cloud-hosted database using MySQL Workbench.
@@ -156,7 +166,7 @@ SELECT * FROM visitors;
 
 ---
 
-### Problems Encountered
+#### Problems Encountered
 
 Initially MySQL Workbench could not connect because:
 
@@ -167,7 +177,7 @@ After enabling public access and adding an inbound rule allowing MySQL traffic f
 
 ---
 
-### Cleanup
+#### Cleanup
 
 After verifying everything worked correctly:
 
@@ -181,3 +191,77 @@ After verifying everything worked correctly:
 ### Reflection
 
 This project introduced me to relational databases hosted in AWS and demonstrated how networking, authentication, and SQL work together. I learned that creating a database is only part of the process—proper VPC configuration and Security Group rules are equally important for successful connectivity. By connecting with MySQL Workbench and executing SQL statements against a live cloud database, I gained practical experience with one of the most common technologies used in modern web applications.
+
+---
+
+### Amazon CloudFront
+
+#### Objective
+
+Learn how to use Amazon CloudFront to distribute a static website globally through AWS edge locations while improving performance, security, and content delivery.
+
+---
+
+#### Services Used
+
+- Amazon CloudFront
+- Amazon S3
+- AWS Global Edge Network
+
+---
+
+#### What I Built
+
+- Created a CloudFront distribution for my existing Amazon S3 static portfolio website.
+- Configured the S3 static website endpoint as the CloudFront origin.
+- Used the recommended origin and cache settings.
+- Deployed the distribution using the default HTTPS-enabled CloudFront domain.
+- Successfully accessed my portfolio website through the CloudFront distribution URL.
+
+---
+
+#### Concepts Learned
+
+- CloudFront is a Content Delivery Network (CDN).
+- An **origin** is the source location where CloudFront retrieves content.
+- CloudFront caches website content at AWS edge locations around the world.
+- Cached content reduces latency and improves website loading performance.
+- CloudFront automatically provides HTTPS using an AWS-managed TLS certificate.
+- CloudFront can reduce the number of requests sent directly to the origin server or S3 bucket.
+
+---
+
+#### Skills Learned
+
+- Created and configured an Amazon CloudFront distribution.
+- Connected CloudFront to an existing Amazon S3 static website.
+- Learned the difference between an origin server and an edge location.
+- Verified successful website delivery through CloudFront.
+- Gained experience configuring content delivery services within AWS.
+- Learned how CloudFront fits into modern web application architectures.
+
+---
+
+#### Problems Encountered
+
+While selecting the origin, AWS detected that my S3 bucket had Static Website Hosting enabled and recommended using the S3 website endpoint instead of the standard bucket endpoint.
+
+Using the website endpoint allowed CloudFront to properly serve the existing static website without requiring additional configuration.
+
+---
+
+#### Cleanup
+
+After verifying the CloudFront distribution functioned correctly:
+
+- Disabled the CloudFront distribution.
+- Deleted the distribution after it finished disabling.
+- Confirmed all temporary resources created for this exercise were removed.
+
+---
+
+### Reflection
+
+This project demonstrated how Amazon CloudFront improves website delivery by placing cached copies of content at edge locations around the world. Unlike serving content directly from Amazon S3, CloudFront reduces latency by delivering cached files from locations closer to users while automatically providing HTTPS support.
+
+Connecting CloudFront to my existing S3 portfolio helped me understand how AWS services are commonly combined in production environments. I now have a clearer understanding of how static websites are hosted, accelerated, and securely delivered at scale using AWS.

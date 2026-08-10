@@ -598,3 +598,176 @@ By performing the complete set of CRUD operations—Create, Read, Update, and De
 The most valuable part of this project was integrating DynamoDB with an existing AWS Lambda function. Using the Python `boto3` SDK and IAM permissions, I built a simple serverless application that retrieved live data directly from the database and generated a dynamic webpage. Updating an item in DynamoDB immediately changed the webpage without requiring any modifications to the Lambda code, reinforcing the importance of separating application logic from stored data.
 
 This project strengthened my understanding of how AWS services work together to build cloud-native applications. Combined with my previous experience using Amazon RDS for relational databases, I now have practical experience with both SQL and NoSQL database technologies as well as integrating a managed database into a serverless application architecture.
+
+---
+
+### Serverless Visitor Counter
+
+#### Objective
+
+Build a dynamic visitor counter by integrating Amazon S3, JavaScript, AWS Lambda, and Amazon DynamoDB into a complete serverless web application.
+
+---
+
+#### Services Used
+
+- Amazon S3
+- AWS Lambda
+- Amazon DynamoDB
+- AWS IAM
+- JavaScript (Fetch API)
+
+---
+
+#### What I Built
+
+- Created a dedicated visitor counter item within the existing `PortfolioVisitors` DynamoDB table.
+- Added a `count` attribute to store the number of portfolio visits.
+- Modified an existing AWS Lambda function to retrieve the visitor counter from DynamoDB.
+- Used DynamoDB's `update_item()` operation to automatically increment the visitor count each time the function was invoked.
+- Changed the Lambda function to return JSON instead of an HTML webpage.
+- Enabled Cross-Origin Resource Sharing (CORS) on the Lambda Function URL.
+- Updated my portfolio website to retrieve the visitor count using JavaScript's `fetch()` API.
+- Displayed the live visitor count dynamically within the website footer.
+- Successfully verified that the visitor count updated on the live Amazon S3-hosted portfolio website.
+
+---
+
+#### Concepts Learned
+
+- Modern web applications often separate the frontend from the backend.
+- AWS Lambda can function as a lightweight API by returning JSON responses.
+- JavaScript's Fetch API allows webpages to retrieve data asynchronously without refreshing the page.
+- DynamoDB can be used as persistent storage for application state.
+- CORS allows browsers to safely request resources hosted on different domains.
+- Returning JSON creates reusable backend services that can support multiple frontend applications.
+
+---
+
+#### Skills Learned
+
+- Returned JSON responses from AWS Lambda.
+- Configured HTTP response headers.
+- Enabled CORS on a Lambda Function URL.
+- Used JavaScript's Fetch API to retrieve remote data.
+- Parsed JSON responses using `response.json()`.
+- Updated webpage content dynamically using the Document Object Model (DOM).
+- Implemented a persistent visitor counter using DynamoDB.
+
+---
+
+#### Problems Encountered
+
+Initially, the visitor counter increased by **two** instead of one each time the webpage loaded.
+
+Using Amazon CloudWatch Logs, I discovered that the browser automatically requested both:
+
+- `/`
+- `/favicon.ico`
+
+Because both requests invoked the Lambda function, the visitor counter incremented twice.
+
+After identifying the cause through CloudWatch, I modified the Lambda function to ignore favicon requests, allowing the visitor counter to increase only once per page visit.
+
+---
+
+#### Cleanup
+
+After verifying everything worked correctly:
+
+- Retained the visitor counter within the DynamoDB table.
+- Retained the Lambda function.
+- Retained the Lambda Function URL.
+- Left CORS enabled for continued communication with the portfolio website.
+
+---
+
+### Reflection
+
+This project represented my first complete serverless application that combined a frontend, backend, and database into a single solution. Instead of generating an entire webpage within AWS Lambda, I learned how modern applications separate presentation from data by allowing JavaScript to retrieve JSON from a backend API.
+
+Building the visitor counter demonstrated how Amazon S3, JavaScript, AWS Lambda, IAM, and DynamoDB work together to create an interactive cloud-native application. Troubleshooting the double-increment issue using CloudWatch Logs also reinforced the importance of monitoring and debugging tools within AWS. This project significantly expanded my understanding of full-stack serverless development.
+
+---
+
+### GitHub Actions CI/CD Pipeline
+
+#### Objective
+
+Automate deployment of my portfolio website so that every push to GitHub automatically publishes the latest version to my Amazon S3 static website.
+
+---
+
+#### Services Used
+
+- GitHub
+- GitHub Actions
+- AWS IAM
+- Amazon S3
+- AWS CLI
+
+---
+
+#### What I Built
+
+- Created a dedicated IAM user for GitHub Actions deployments.
+- Granted the IAM user permission to upload files to my Amazon S3 portfolio bucket.
+- Generated AWS Access Keys for automated deployments.
+- Stored the credentials securely using GitHub Repository Secrets.
+- Created a GitHub Actions workflow (`deploy.yml`).
+- Configured the workflow to run automatically whenever changes are pushed to the `main` branch.
+- Used the AWS CLI within GitHub Actions to synchronize website files with my Amazon S3 bucket.
+- Verified successful automated deployments through GitHub Actions workflow logs.
+- Confirmed that changes appeared on the live portfolio website without running any manual deployment commands.
+
+---
+
+#### Concepts Learned
+
+- CI stands for **Continuous Integration**.
+- CD stands for **Continuous Deployment** (or Continuous Delivery).
+- GitHub Actions automatically executes workflows based on repository events.
+- GitHub Repository Secrets securely store sensitive credentials.
+- IAM users can be created specifically for automation instead of using personal credentials.
+- Automated deployments reduce manual work and improve deployment consistency.
+
+---
+
+#### Skills Learned
+
+- Created GitHub Actions workflow files using YAML.
+- Configured GitHub Repository Secrets.
+- Authenticated GitHub Actions with AWS using IAM Access Keys.
+- Automated Amazon S3 deployments.
+- Used the AWS CLI within GitHub Actions workflows.
+- Verified workflow execution through GitHub Actions logs.
+- Eliminated manual deployment using `aws s3 sync`.
+
+---
+
+#### Problems Encountered
+
+Before implementing GitHub Actions, every portfolio update required manually running AWS CLI deployment commands.
+
+After configuring GitHub Actions, pushing code to GitHub automatically synchronized the updated files with Amazon S3.
+
+The workflow completed successfully. GitHub displayed a warning indicating that Node.js 20 is being deprecated for one of the GitHub Actions used by the workflow, but the deployment completed successfully and required no changes.
+
+---
+
+#### Cleanup
+
+After verifying automated deployment worked correctly:
+
+- Retained the GitHub Actions workflow.
+- Retained the IAM deployment user.
+- Retained the GitHub Repository Secrets.
+- Left automated deployments enabled for future portfolio updates.
+
+---
+
+### Reflection
+
+Implementing CI/CD significantly improved the way I manage my portfolio website. Previously, every website update required manually running AWS CLI commands to synchronize files with Amazon S3. After implementing GitHub Actions, simply committing and pushing changes to GitHub automatically deployed the latest version of the website.
+
+This project introduced me to modern DevOps practices by connecting GitHub, GitHub Actions, AWS IAM, Amazon S3, and the AWS CLI into a fully automated deployment pipeline. It also reinforced the importance of automation, secure credential management, and repeatable deployment processes—skills that are widely used in professional software development and cloud engineering environments.

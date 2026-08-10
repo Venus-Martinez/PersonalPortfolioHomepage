@@ -1,3 +1,5 @@
+# AWS Learning Journal
+
 # August 9, 2026
 
 ## IAM & AWS Permissions
@@ -64,3 +66,118 @@ I also gained valuable troubleshooting experience by resolving an AWS KMS permis
 Finally, I explored **Amazon Bedrock**, AWS's generative AI platform. By interacting with the Nova Lite foundation model, I generated technical explanations, Python code, and professional portfolio content, demonstrating how foundation models can assist with software development, documentation, and content creation.
 
 Overall, today's activities strengthened my understanding of several core AWS services and highlighted how AWS supports both traditional cloud infrastructure and modern serverless and AI-powered application development.
+
+# August 10, 2026
+
+## Amazon RDS & MySQL
+
+### Objective
+
+Learn how to create, configure, connect to, and manage a relational database hosted in Amazon RDS using MySQL.
+
+---
+
+### Services Used
+
+- Amazon RDS
+- Amazon VPC
+- EC2 Security Groups
+- AWS Billing
+- MySQL Workbench
+
+---
+
+### What I Built
+
+- Created an Amazon RDS MySQL Community database instance.
+- Selected the Free Tier `db.t4g.micro` instance type.
+- Configured self-managed database credentials.
+- Enabled public accessibility for testing purposes.
+- Configured a Security Group to allow MySQL (port 3306) traffic from my public IP address.
+- Connected successfully to the RDS instance using MySQL Workbench.
+
+---
+
+### SQL Commands Practiced
+
+Verified the database version:
+
+```sql
+SELECT VERSION();
+```
+
+Created a database:
+
+```sql
+CREATE DATABASE portfolio;
+```
+
+Selected the database:
+
+```sql
+USE portfolio;
+```
+
+Created a table:
+
+```sql
+CREATE TABLE visitors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    visit_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+Inserted a record:
+
+```sql
+INSERT INTO visitors (name)
+VALUES ('Venus');
+```
+
+Queried the table:
+
+```sql
+SELECT * FROM visitors;
+```
+
+---
+
+### Skills Learned
+
+- Created an Amazon RDS MySQL database.
+- Connected to a cloud-hosted database using MySQL Workbench.
+- Learned how VPC Security Groups function as virtual firewalls.
+- Enabled public database access for testing.
+- Configured inbound MySQL (3306) rules.
+- Created databases and tables using SQL.
+- Inserted and queried records.
+- Verified successful database connectivity from a local computer.
+
+---
+
+### Problems Encountered
+
+Initially MySQL Workbench could not connect because:
+
+- The RDS instance was not publicly accessible.
+- Port 3306 was blocked by the Security Group.
+
+After enabling public access and adding an inbound rule allowing MySQL traffic from my public IP address, the connection succeeded.
+
+---
+
+### Cleanup
+
+After verifying everything worked correctly:
+
+- Deleted the RDS database instance.
+- Removed the temporary inbound MySQL Security Group rule.
+- Chose not to retain automated backups or create a final snapshot.
+- Verified all practice resources were removed to avoid unnecessary charges.
+
+---
+
+### Reflection
+
+This project introduced me to relational databases hosted in AWS and demonstrated how networking, authentication, and SQL work together. I learned that creating a database is only part of the process—proper VPC configuration and Security Group rules are equally important for successful connectivity. By connecting with MySQL Workbench and executing SQL statements against a live cloud database, I gained practical experience with one of the most common technologies used in modern web applications.

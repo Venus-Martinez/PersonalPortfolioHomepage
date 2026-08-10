@@ -341,3 +341,111 @@ After verifying everything worked correctly:
 This project demonstrated how Amazon API Gateway serves as the front door for serverless applications by routing incoming HTTP requests to backend services such as AWS Lambda. Unlike invoking a Lambda function directly through a Function URL, API Gateway provides structured routing, deployment stages, integrations, and the ability to support multiple endpoints within a single API.
 
 By integrating API Gateway with the Lambda function I created previously, I built my first multi-service AWS architecture. This project reinforced how individual AWS services work together to create scalable cloud applications and provided a strong foundation for future work with monitoring, databases, authentication, and event-driven architectures.
+
+---
+
+### Amazon CloudWatch
+
+#### Objective
+
+Learn how Amazon CloudWatch collects logs, metrics, and performance data from AWS services by monitoring an existing AWS Lambda function, creating a custom dashboard, and troubleshooting application errors.
+
+---
+
+#### Services Used
+
+- Amazon CloudWatch
+- AWS Lambda
+- CloudWatch Logs
+- CloudWatch Metrics
+- CloudWatch Dashboards
+
+---
+
+#### What I Built
+
+- Explored the Amazon CloudWatch console.
+- Examined automatically generated CloudWatch Log Groups created by AWS Lambda.
+- Viewed Lambda execution log streams.
+- Created a custom CloudWatch dashboard for monitoring Lambda performance.
+- Added widgets displaying Lambda Invocations, Duration, Errors, and Throttles.
+- Filtered dashboard metrics to monitor a specific Lambda function.
+- Successfully monitored Lambda execution metrics in near real time.
+
+---
+
+#### Concepts Learned
+
+- CloudWatch automatically collects metrics from many AWS services.
+- AWS Lambda automatically creates CloudWatch Log Groups for function execution.
+- Each Lambda invocation generates log events that can be used for troubleshooting.
+- CloudWatch Dashboards provide a centralized view of application health.
+- Metrics visualize application performance while Logs provide detailed execution information.
+- Errors recorded by Lambda automatically appear as CloudWatch metrics.
+
+---
+
+#### Skills Learned
+
+- Navigated CloudWatch Logs and Metrics.
+- Located Lambda Log Groups and Log Streams.
+- Created a custom CloudWatch dashboard.
+- Configured dashboard widgets to display Lambda metrics.
+- Filtered metrics by Lambda Function Name.
+- Interpreted Lambda execution metrics including:
+  - Invocations
+  - Duration
+  - Errors
+  - Throttles
+- Used CloudWatch Logs to investigate runtime failures.
+
+---
+
+#### Troubleshooting Exercise
+
+To better understand CloudWatch's monitoring capabilities, I intentionally introduced a syntax error into my Lambda function by modifying the Python source code.
+
+After deploying the broken code:
+
+- The Lambda Function URL returned an **Internal Server Error**.
+- CloudWatch recorded additional Lambda invocations.
+- The Errors metric increased on the dashboard.
+- CloudWatch Logs captured the runtime failure.
+- The log output identified the error as:
+
+```
+Runtime.UserCodeSyntaxError
+```
+
+The log stream also included execution details such as:
+
+- Request ID
+- Duration
+- Billed Duration
+- Memory Size
+- Max Memory Used
+- Error Type
+
+This exercise demonstrated how CloudWatch can quickly identify and diagnose application failures in serverless workloads.
+
+---
+
+#### Cleanup
+
+After completing the monitoring exercise:
+
+- Removed the intentionally introduced syntax error.
+- Redeployed the Lambda function.
+- Verified successful execution.
+- Confirmed CloudWatch recorded successful Lambda invocations after the repair.
+- Retained the CloudWatch dashboard for future monitoring practice.
+
+---
+
+### Reflection
+
+This project demonstrated that Amazon CloudWatch is much more than a logging service—it is a centralized monitoring platform for AWS resources. I learned how metrics provide a high-level overview of application health while log streams contain the detailed information needed to diagnose problems.
+
+By intentionally introducing a coding error and then using CloudWatch to identify the resulting runtime exception, I gained practical experience with one of the most important workflows used by cloud engineers and software developers. Rather than simply observing monitoring data, I used CloudWatch to investigate a real application failure from the initial error through the diagnostic logs and performance metrics.
+
+This project strengthened my understanding of observability within AWS and showed how CloudWatch supports monitoring, troubleshooting, and maintaining production cloud applications.

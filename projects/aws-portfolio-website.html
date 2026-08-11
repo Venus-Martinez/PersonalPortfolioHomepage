@@ -5,269 +5,624 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+        content="A detailed look at the AWS Portfolio Website developed by Venus Martinez using HTML, CSS, JavaScript, GitHub, and Amazon Web Services.">
+
     <title>AWS Portfolio Website | Venus Martinez</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <a href="../index.html">← Back to Portfolio</a>
+    <header class="site-header">
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a class="logo" href="../index.html">
+                Venus Martinez
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+
         </nav>
+
     </header>
+
 
     <main>
 
         <!-- PROJECT HERO -->
-        <section class="project-detail-hero">
 
-            <p class="project-type">WEB DEVELOPMENT · CLOUD DEPLOYMENT</p>
+        <section class="project-hero">
 
-            <h1>AWS Portfolio Website</h1>
+            <div class="section-container">
 
-            <p>
-                A responsive personal portfolio developed with HTML and CSS,
-                version-controlled using Git and GitHub, and deployed through
-                both GitHub Pages and Amazon Web Services using Amazon S3.
-            </p>
-
-            <p class="technology-list">
-                HTML · CSS · Git · GitHub · GitHub Pages · AWS S3
-            </p>
-
-        </section>
-
-
-        <!-- ABOUT -->
-        <section class="project-detail-section">
-
-            <h2>About the Project</h2>
-
-            <p>
-                This portfolio website was created as a central place to
-                showcase my software development projects, technical skills,
-                education, and continued growth as a developer.
-            </p>
-
-            <p>
-                Rather than relying on a website builder or prebuilt portfolio
-                platform, I developed the site using HTML and CSS while using
-                Git and GitHub to manage the source code and development
-                history.
-            </p>
-
-            <p>
-                The project also serves as practical experience with web
-                deployment and cloud technologies. The website has been
-                deployed using both GitHub Pages and Amazon S3 static website
-                hosting.
-            </p>
-
-        </section>
-
-
-        <!-- SCREENSHOT -->
-        <section class="project-detail-section">
-
-            <h2>The Portfolio</h2>
-
-            <img
-                class="project-detail-image"
-                src="../images/portfolio-website.png"
-                alt="Screenshot of the personal portfolio website">
-
-            <p>
-                The website you're currently viewing is the project itself.
-                As I build new applications and develop additional technical
-                skills, the portfolio continues to evolve alongside my
-                development experience.
-            </p>
-
-        </section>
-
-
-        <!-- DEVELOPMENT -->
-        <section class="project-detail-section">
-
-            <h2>Development</h2>
-
-            <p>
-                The website is developed locally using Visual Studio Code.
-                Git provides version control for the project, while GitHub
-                stores the remote repository and provides an additional
-                deployment through GitHub Pages.
-            </p>
-
-            <div class="project-flow">
-
-                <p>
-                    Visual Studio Code
-                    →
-                    Git
-                    →
-                    GitHub
-                    →
-                    GitHub Pages
+                <p class="eyebrow">
+                    Featured Project
                 </p>
 
-            </div>
+                <h1>AWS Portfolio Website</h1>
 
-        </section>
-
-
-        <!-- AWS -->
-        <section class="project-detail-section">
-
-            <h2>AWS Deployment</h2>
-
-            <p>
-                In addition to GitHub Pages, the portfolio has been deployed
-                using Amazon Web Services. The static website files are hosted
-                in an Amazon S3 bucket configured for static website hosting.
-            </p>
-
-            <p>
-                Working with AWS provided hands-on experience with cloud
-                storage, static website hosting, bucket configuration, and
-                deploying web content outside of a traditional web-hosting
-                platform.
-            </p>
-
-            <div class="project-flow">
-
-                <p>
-                    HTML / CSS
-                    →
-                    Amazon S3
-                    →
-                    Static Website Hosting
-                    →
-                    Live Portfolio
+                <p class="project-summary">
+                    A responsive personal software development portfolio built
+                    with HTML, CSS, and JavaScript, managed with Git and GitHub,
+                    and deployed using both GitHub Pages and Amazon Web Services.
                 </p>
 
-            </div>
+                <div class="project-links">
 
-        </section>
+                    <a class="button secondary-button"
+                        href="https://github.com/Venus-Martinez/PersonalPortfolioHomepage"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        View Source Code
+                    </a>
 
+                    <a class="button secondary-button"
+                        href="../index.html#projects">
+                        Back to Projects
+                    </a>
 
-        <!-- DUAL DEPLOYMENT -->
-        <section class="project-detail-section">
-
-            <h2>Deployment Architecture</h2>
-
-            <p>
-                The portfolio can be deployed through two different hosting
-                environments, allowing the same website project to serve as
-                experience with both GitHub-based deployment and AWS cloud
-                hosting.
-            </p>
-
-            <div class="project-flow">
-
-                <pre>
-                    Portfolio Source Code
-                           |
-                    +------+------+
-                    |             |
-                  GitHub        Amazon S3
-                    |             |
-              GitHub Pages   Static Website
-                    |             |
-                    +------+------+
-                           |
-                    Live Portfolio
-                </pre>
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- FEATURES -->
-        <section class="project-detail-section">
+        <!-- PROJECT SHOWCASE -->
 
-            <h2>Key Features</h2>
+        <section class="project-showcase">
 
-            <ul>
-                <li>Responsive HTML and CSS layout</li>
-                <li>Dedicated project showcase pages</li>
-                <li>Git version control</li>
-                <li>GitHub repository integration</li>
-                <li>GitHub Pages deployment</li>
-                <li>Amazon S3 static website hosting</li>
-                <li>Reusable project card components</li>
-                <li>External links to project source code and live demos</li>
-                <li>Continually expandable project architecture</li>
-            </ul>
+            <div class="section-container">
+
+                <img class="project-showcase-image"
+                    src="../images/AWS-S3-Portfolio.jpeg"
+                    alt="Amazon S3 console showing the files used to deploy the portfolio website">
+
+            </div>
 
         </section>
 
 
-        <!-- SKILLS -->
-        <section class="project-detail-section">
+        <!-- PROJECT DETAILS -->
 
-            <h2>Technologies & Skills</h2>
+        <section class="section">
 
-            <p class="technology-list">
-                HTML · CSS · Git · GitHub · GitHub Pages ·
-                AWS · Amazon S3 · VS Code · Responsive Web Design
-            </p>
-
-        </section>
+            <div class="project-detail-container">
 
 
-        <!-- WHAT I LEARNED -->
-        <section class="project-detail-section">
+                <!-- MAIN CONTENT -->
 
-            <h2>What I Learned</h2>
-
-            <p>
-                Building this portfolio has given me experience beyond simply
-                creating individual web pages. I have worked with project
-                organization, reusable styling, version control, remote
-                repositories, deployment, and cloud hosting as parts of a
-                complete development workflow.
-            </p>
-
-            <p>
-                Deploying the same project through GitHub Pages and Amazon S3
-                also helped me better understand the distinction between
-                developing an application locally and making that application
-                accessible through a hosting environment.
-            </p>
-
-            <p>
-                Most importantly, this portfolio is an ongoing project. As my
-                software development and cloud skills grow, I can continue
-                improving the site and applying new technologies directly to
-                it.
-            </p>
-
-        </section>
+                <article class="project-main-content">
 
 
-        <!-- LINKS -->
-        <section class="project-detail-section">
+                    <!-- PROJECT OVERVIEW -->
 
-            <h2>Project Links</h2>
+                    <section class="project-detail-section">
 
-            <div class="project-links">
+                        <h2>Project Overview</h2>
 
-                <a
-                    href="YOUR-GITHUB-REPOSITORY-URL"
-                    class="button primary-button"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    View Source on GitHub
-                </a>
+                        <p>
+                            This portfolio website serves as the central location
+                            for showcasing my software development projects,
+                            technical skills, education, and continued growth as
+                            a developer.
+                        </p>
 
-                <a
-                    href="../index.html"
-                    class="button secondary-button">
-                    Back to Portfolio
-                </a>
+                        <p>
+                            Rather than using a website builder or prebuilt
+                            portfolio platform, I developed the site directly
+                            with HTML, CSS, and JavaScript and use Git and GitHub
+                            to manage its source code and development history.
+                        </p>
+
+                        <p>
+                            The portfolio has also become an ongoing cloud
+                            development project. In addition to being deployed
+                            through GitHub Pages, the website is hosted through
+                            Amazon Web Services using Amazon S3 static website
+                            hosting.
+                        </p>
+
+                    </section>
+
+
+                    <!-- PURPOSE -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Purpose</h2>
+
+                        <p>
+                            The original purpose of the project was to create a
+                            professional location where I could organize and
+                            present my growing collection of programming and
+                            cloud-development projects.
+                        </p>
+
+                        <p>
+                            As I continued learning new technologies, the
+                            portfolio itself became another project. Instead of
+                            only displaying what I had learned, I began applying
+                            those technologies directly to the website.
+                        </p>
+
+                        <p>
+                            This allows the portfolio to evolve alongside my
+                            skills while also providing practical experience
+                            with development workflows, version control,
+                            deployment, cloud hosting, and serverless
+                            application architecture.
+                        </p>
+
+                    </section>
+
+
+                    <!-- KEY FEATURES -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Key Features</h2>
+
+                        <ul class="feature-list">
+
+                            <li>
+                                Responsive HTML and CSS layout
+                            </li>
+
+                            <li>
+                                Dedicated project showcase pages
+                            </li>
+
+                            <li>
+                                Reusable project-card styling
+                            </li>
+
+                            <li>
+                                Git version control
+                            </li>
+
+                            <li>
+                                GitHub repository integration
+                            </li>
+
+                            <li>
+                                GitHub Pages deployment
+                            </li>
+
+                            <li>
+                                Amazon S3 static website hosting
+                            </li>
+
+                            <li>
+                                JavaScript-powered dynamic functionality
+                            </li>
+
+                            <li>
+                                Serverless visitor counter
+                            </li>
+
+                            <li>
+                                AWS Lambda backend integration
+                            </li>
+
+                            <li>
+                                Amazon DynamoDB persistent data storage
+                            </li>
+
+                            <li>
+                                External links to project source code and live applications
+                            </li>
+
+                            <li>
+                                Responsive project and navigation layouts
+                            </li>
+
+                            <li>
+                                Continually expandable project architecture
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+
+                    <!-- DEVELOPMENT -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Development Process</h2>
+
+                        <p>
+                            The portfolio is developed locally using Visual
+                            Studio Code. HTML provides the site structure, CSS
+                            controls the visual design and responsive layout,
+                            and JavaScript adds dynamic functionality where
+                            needed.
+                        </p>
+
+                        <p>
+                            Git is used to track changes to the project, while
+                            GitHub stores the remote repository and provides a
+                            public development history.
+                        </p>
+
+                        <p>
+                            This workflow allows changes to be developed and
+                            tested locally before being committed and pushed to
+                            GitHub.
+                        </p>
+
+                    </section>
+
+
+                    <!-- VERSION CONTROL -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Version Control</h2>
+
+                        <p>
+                            Git and GitHub are used throughout development to
+                            manage changes to the website.
+                        </p>
+
+                        <p>
+                            As new projects, pages, styles, and features are
+                            added, changes can be grouped into commits that
+                            document the progression of the portfolio over time.
+                        </p>
+
+                        <p>
+                            GitHub also provides the source repository used for
+                            one of the site's public deployment methods through
+                            GitHub Pages.
+                        </p>
+
+                    </section>
+
+
+                    <!-- AWS DEPLOYMENT -->
+
+                    <section class="project-detail-section">
+
+                        <h2>AWS Deployment</h2>
+
+                        <p>
+                            The portfolio is also hosted through Amazon Web
+                            Services using an Amazon S3 bucket configured for
+                            static website hosting.
+                        </p>
+
+                        <p>
+                            The website's HTML files, stylesheets, project
+                            pages, JavaScript, and image assets are uploaded to
+                            the S3 deployment and served as a static website.
+                        </p>
+
+                        <p>
+                            Working with Amazon S3 provided hands-on experience
+                            with cloud storage, bucket configuration, static
+                            website hosting, object organization, and deploying
+                            web content outside of a traditional hosting
+                            platform.
+                        </p>
+
+                    </section>
+
+
+                    <!-- DUAL DEPLOYMENT -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Deployment Architecture</h2>
+
+                        <p>
+                            The same portfolio project can be delivered through
+                            two different hosting environments.
+                        </p>
+
+                        <p>
+                            GitHub Pages provides a deployment directly from the
+                            GitHub-hosted source project, while Amazon S3
+                            provides a separate AWS-hosted static deployment.
+                        </p>
+
+                        <p>
+                            Using both platforms helped me understand the
+                            difference between source control, application
+                            development, and the infrastructure responsible for
+                            actually delivering a website to users.
+                        </p>
+
+                    </section>
+
+
+                    <!-- SERVERLESS COUNTER -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Serverless Visitor Counter</h2>
+
+                        <p>
+                            The portfolio has expanded beyond a purely static
+                            website by incorporating a serverless visitor
+                            counter.
+                        </p>
+
+                        <p>
+                            JavaScript running in the browser uses the Fetch API
+                            to request the current visitor count from an AWS
+                            Lambda function.
+                        </p>
+
+                        <p>
+                            The Lambda function communicates with Amazon
+                            DynamoDB, where the visitor count is stored
+                            persistently. Each visit updates the stored count
+                            and returns the new value to the website as JSON.
+                        </p>
+
+                        <p>
+                            The returned value is then displayed dynamically in
+                            the portfolio footer without requiring the entire
+                            webpage to reload.
+                        </p>
+
+                    </section>
+
+
+                    <!-- CLOUD ARCHITECTURE -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Cloud Architecture</h2>
+
+                        <p>
+                            The visitor counter introduced a basic separation
+                            between frontend, backend, and persistent storage.
+                        </p>
+
+                        <p>
+                            The static website acts as the frontend, AWS Lambda
+                            provides serverless backend logic, and Amazon
+                            DynamoDB provides persistent application data.
+                        </p>
+
+                        <p>
+                            This was an important step beyond static hosting
+                            because it demonstrated how multiple cloud services
+                            can work together to provide dynamic functionality
+                            without requiring a traditional always-running
+                            server.
+                        </p>
+
+                    </section>
+
+
+                    <!-- CHALLENGES -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Challenges and Solutions</h2>
+
+
+                        <h3>Moving beyond local development</h3>
+
+                        <p>
+                            One of the first challenges was understanding the
+                            difference between building a website locally and
+                            making that website publicly accessible.
+                        </p>
+
+                        <p>
+                            Deploying through GitHub Pages and Amazon S3 gave me
+                            practical experience with two different approaches
+                            to publishing the same project.
+                        </p>
+
+
+                        <h3>Connecting frontend and backend services</h3>
+
+                        <p>
+                            Adding the visitor counter required the browser-based
+                            frontend to communicate with a separate AWS service.
+                        </p>
+
+                        <p>
+                            JavaScript's Fetch API is used to request JSON from
+                            the Lambda backend, while CORS configuration allows
+                            the browser to communicate with the Lambda Function
+                            URL across different domains.
+                        </p>
+
+
+                        <h3>Persisting application data</h3>
+
+                        <p>
+                            A visitor count cannot rely only on browser memory
+                            because the value needs to remain available across
+                            users and page loads.
+                        </p>
+
+                        <p>
+                            Amazon DynamoDB provides persistent storage for the
+                            count, allowing the Lambda function to retrieve and
+                            update the value independently of the frontend.
+                        </p>
+
+
+                        <h3>Troubleshooting unexpected requests</h3>
+
+                        <p>
+                            During development of the visitor counter, browser
+                            behavior caused additional requests that initially
+                            resulted in the count increasing more than expected.
+                        </p>
+
+                        <p>
+                            Investigating application behavior and AWS logs
+                            helped identify the cause and refine the Lambda
+                            logic so that unintended requests would not affect
+                            the visitor count.
+                        </p>
+
+                    </section>
+
+
+                    <!-- WHAT I LEARNED -->
+
+                    <section class="project-detail-section">
+
+                        <h2>What I Learned</h2>
+
+                        <p>
+                            Building this portfolio has given me experience with
+                            much more than designing individual webpages.
+                        </p>
+
+                        <p>
+                            The project has strengthened my understanding of
+                            HTML, CSS, JavaScript, responsive design, project
+                            organization, Git version control, GitHub
+                            repositories, deployment workflows, cloud storage,
+                            serverless computing, API-style communication, and
+                            persistent cloud data.
+                        </p>
+
+                        <p>
+                            Integrating AWS Lambda and DynamoDB helped me better
+                            understand how modern applications can separate the
+                            frontend interface from backend application logic
+                            and stored data.
+                        </p>
+
+                        <p>
+                            Most importantly, the portfolio continues to evolve.
+                            As I learn additional technologies, I can apply them
+                            directly to the project and document that growth
+                            through both the website and its Git history.
+                        </p>
+
+                    </section>
+
+
+                    <!-- FUTURE IMPROVEMENTS -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Future Improvements</h2>
+
+                        <ul class="feature-list">
+
+                            <li>
+                                Continue expanding the project showcase
+                            </li>
+
+                            <li>
+                                Add additional interactive portfolio features
+                            </li>
+
+                            <li>
+                                Improve accessibility throughout the site
+                            </li>
+
+                            <li>
+                                Continue refining mobile responsiveness
+                            </li>
+
+                            <li>
+                                Explore additional AWS integrations
+                            </li>
+
+                            <li>
+                                Add automated testing
+                            </li>
+
+                            <li>
+                                Expand CI/CD and automated deployment workflows
+                            </li>
+
+                            <li>
+                                Add additional monitoring and analytics
+                            </li>
+
+                            <li>
+                                Continue improving performance and page-load efficiency
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+
+                </article>
+
+
+                <!-- SIDEBAR -->
+
+                <aside class="project-sidebar">
+
+                    <div class="project-info-card">
+
+                        <h2>Project Information</h2>
+
+                        <dl class="project-facts">
+
+                            <div>
+                                <dt>Project type</dt>
+                                <dd>Web / Cloud Application</dd>
+                            </div>
+
+                            <div>
+                                <dt>Frontend</dt>
+                                <dd>HTML, CSS, JavaScript</dd>
+                            </div>
+
+                            <div>
+                                <dt>Cloud services</dt>
+                                <dd>AWS S3, Lambda, DynamoDB</dd>
+                            </div>
+
+                            <div>
+                                <dt>Version control</dt>
+                                <dd>Git and GitHub</dd>
+                            </div>
+
+                            <div>
+                                <dt>Deployment</dt>
+                                <dd>GitHub Pages and Amazon S3</dd>
+                            </div>
+
+                            <div>
+                                <dt>Development environment</dt>
+                                <dd>Visual Studio Code</dd>
+                            </div>
+
+                            <div>
+                                <dt>Status</dt>
+                                <dd>Active Project</dd>
+                            </div>
+
+                        </dl>
+
+                    </div>
+
+                </aside>
+
 
             </div>
 
@@ -275,10 +630,12 @@
 
     </main>
 
-    <footer>
+
+    <footer class="site-footer">
 
         <p>
-            &copy; 2026 Venus Martinez
+            &copy; 2026 Venus Martinez. Built with HTML, CSS, JavaScript,
+            and AWS Cloud.
         </p>
 
     </footer>

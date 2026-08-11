@@ -4,33 +4,754 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="A detailed look at the Gift Card Game developed by Venus Martinez using Java, object-oriented programming, collections, file input, and randomized game logic.">
+
     <title>Gift Card Game | Venus Martinez</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
 
+    <header class="site-header">
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a class="logo" href="../index.html">
+                Venus Martinez
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
     <main>
 
-        <section>
+        <!-- PROJECT HERO -->
 
-            <h1>Gift Card Game</h1>
+        <section class="project-hero">
 
-            <p>
-                Java Console Application
-            </p>
+            <div class="section-container">
 
-            <p>
-                This project page is currently under development.
-            </p>
+                <p class="eyebrow">
+                    Featured Project
+                </p>
 
-            <a href="../index.html">
-                Back to Portfolio
-            </a>
+                <h1>Gift Card Game</h1>
+
+                <p class="project-summary">
+                    A Java console application that simulates a multiplayer
+                    gift card game using object-oriented programming, file
+                    input, collections, randomized gameplay, elimination rules,
+                    and calculated winner selection.
+                </p>
+
+                <div class="project-links">
+
+                    <a class="button secondary-button"
+                        href="https://github.com/Venus-Martinez/GiftCardGame"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        View Source Code
+                    </a>
+
+                    <a class="button secondary-button"
+                        href="../index.html#projects">
+                        Back to Projects
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT SHOWCASE -->
+
+        <section class="project-showcase">
+
+            <div class="section-container">
+
+                <img class="project-showcase-image"
+                    src="../images/GiftCardGame-Winner.png"
+                    alt="Gift Card Game console output showing the winning participant">
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT DETAILS -->
+
+        <section class="section">
+
+            <div class="project-detail-container">
+
+
+                <!-- MAIN CONTENT -->
+
+                <article class="project-main-content">
+
+
+                    <!-- PROJECT OVERVIEW -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Project Overview</h2>
+
+                        <p>
+                            The Gift Card Game is a Java console application
+                            built to simulate a complete multiplayer game from
+                            initial setup through winner selection.
+                        </p>
+
+                        <p>
+                            The program loads gift card data from an external
+                            text file, creates participants, distributes cards,
+                            calculates values, performs elimination checks,
+                            simulates randomized card swaps, and determines the
+                            final winner.
+                        </p>
+
+                        <p>
+                            The project was designed using multiple Java classes
+                            so that game data, participant behavior, card
+                            management, and overall game control are separated
+                            into distinct responsibilities.
+                        </p>
+
+                    </section>
+
+
+                    <!-- PURPOSE -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Purpose</h2>
+
+                        <p>
+                            The goal of this project was to apply core
+                            object-oriented programming concepts to a larger
+                            application involving multiple interacting classes.
+                        </p>
+
+                        <p>
+                            Instead of placing all logic inside a single
+                            program file, the application separates the game
+                            into specialized components that work together to
+                            manage cards, players, game rules, and user
+                            interaction.
+                        </p>
+
+                        <p>
+                            The project also provided hands-on experience with
+                            file input, ArrayLists, randomization, validation,
+                            nested loops, comparisons, and formatted console
+                            output.
+                        </p>
+
+                    </section>
+
+
+                    <!-- HOW THE GAME WORKS -->
+
+                    <section class="project-detail-section">
+
+                        <h2>How the Game Works</h2>
+
+                        <p>
+                            When the program starts, gift card information is
+                            loaded from an external data file and shuffled into
+                            a random order.
+                        </p>
+
+                        <p>
+                            The user then selects between one and five
+                            participants and enters a name for each participant.
+                            Each participant receives three gift cards from the
+                            shuffled collection.
+                        </p>
+
+                        <p>
+                            The application calculates the combined value of
+                            each participant's cards and then applies the first
+                            elimination rule.
+                        </p>
+
+                    </section>
+
+
+                    <!-- INITIAL ELIMINATION -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Initial Elimination</h2>
+
+                        <p>
+                            After the first three cards are distributed, the
+                            total calculated value of each participant's cards
+                            is evaluated.
+                        </p>
+
+                        <p>
+                            Any participant whose combined calculated value is
+                            greater than $3,000 is removed from the game.
+                        </p>
+
+                        <p>
+                            Participants who remain continue into the random
+                            card-swapping phase.
+                        </p>
+
+                    </section>
+
+
+                    <!-- CARD SWAPPING -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Random Card Swapping</h2>
+
+                        <p>
+                            Each remaining participant receives two
+                            opportunities to swap one of their existing gift
+                            cards.
+                        </p>
+
+                        <p>
+                            For each opportunity, the program randomly decides
+                            whether a swap will occur. If a swap is selected,
+                            the application randomly chooses one of the
+                            participant's existing cards and replaces it with
+                            the next available card from the Barrel.
+                        </p>
+
+                        <p>
+                            Because both the initial card order and the swap
+                            decisions are randomized, separate executions of
+                            the program can produce different hands,
+                            eliminations, and winners.
+                        </p>
+
+                    </section>
+
+
+                    <!-- FINAL ELIMINATION -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Final Elimination</h2>
+
+                        <p>
+                            After the card-swapping phase, each remaining
+                            participant's cards are checked for duplicate
+                            companies and duplicate monetary values.
+                        </p>
+
+                        <p>
+                            A participant is eliminated if two or more of their
+                            gift cards share the same company or the same
+                            monetary value.
+                        </p>
+
+                        <p>
+                            Participants who pass this final check remain
+                            eligible to win the game.
+                        </p>
+
+                    </section>
+
+
+                    <!-- WINNER -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Winner Selection</h2>
+
+                        <p>
+                            Once the elimination phases are complete, the
+                            application compares the remaining participants.
+                        </p>
+
+                        <p>
+                            The participant with the lowest combined calculated
+                            gift card value is selected as the winner.
+                        </p>
+
+                        <p>
+                            If every participant has been eliminated, the
+                            program reports that no winner remains.
+                        </p>
+
+                    </section>
+
+
+                    <!-- KEY FEATURES -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Key Features</h2>
+
+                        <ul class="feature-list">
+
+                            <li>
+                                Multiplayer console-based game
+                            </li>
+
+                            <li>
+                                Support for one to five participants
+                            </li>
+
+                            <li>
+                                External gift card data file
+                            </li>
+
+                            <li>
+                                Randomized card shuffling
+                            </li>
+
+                            <li>
+                                Three-card initial distribution
+                            </li>
+
+                            <li>
+                                Calculated gift card values
+                            </li>
+
+                            <li>
+                                Participant total-value calculations
+                            </li>
+
+                            <li>
+                                Initial elimination based on total value
+                            </li>
+
+                            <li>
+                                Two randomized card-swap opportunities
+                            </li>
+
+                            <li>
+                                Duplicate company detection
+                            </li>
+
+                            <li>
+                                Duplicate monetary-value detection
+                            </li>
+
+                            <li>
+                                Final winner selection
+                            </li>
+
+                            <li>
+                                User input validation
+                            </li>
+
+                            <li>
+                                File-not-found exception handling
+                            </li>
+
+                            <li>
+                                Formatted console output
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+
+                    <!-- OBJECT-ORIENTED DESIGN -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Object-Oriented Design</h2>
+
+                        <p>
+                            The project is divided into five primary Java
+                            classes, with each class responsible for a specific
+                            part of the application.
+                        </p>
+
+
+                        <h3>GiftCard</h3>
+
+                        <p>
+                            The GiftCard class represents one individual card.
+                            It stores the card's category, company, monetary
+                            value, and assigned point value.
+                        </p>
+
+                        <p>
+                            It also calculates the weighted value of the card
+                            by multiplying its monetary value by its point value.
+                        </p>
+
+
+                        <h3>Participant</h3>
+
+                        <p>
+                            The Participant class represents one player in the
+                            game and stores that participant's name and
+                            collection of GiftCard objects.
+                        </p>
+
+                        <p>
+                            It also calculates the combined value of all cards
+                            currently assigned to the participant.
+                        </p>
+
+
+                        <h3>Barrel</h3>
+
+                        <p>
+                            The Barrel class manages the complete collection of
+                            available gift cards.
+                        </p>
+
+                        <p>
+                            It reads card information from the external data
+                            file, creates GiftCard objects, stores them in an
+                            ArrayList, shuffles the collection, and returns
+                            cards one at a time as the game progresses.
+                        </p>
+
+
+                        <h3>GameMaster</h3>
+
+                        <p>
+                            The GameMaster class controls the primary game
+                            rules and coordinates the other classes.
+                        </p>
+
+                        <p>
+                            It manages participants, deals cards, performs
+                            elimination checks, runs the card-swapping phase,
+                            determines the winner, and displays game results.
+                        </p>
+
+
+                        <h3>GiftCardGameTest</h3>
+
+                        <p>
+                            GiftCardGameTest contains the program's main method
+                            and serves as the entry point for the application.
+                        </p>
+
+                        <p>
+                            It gathers participant information from the user and
+                            calls the appropriate GameMaster methods in the
+                            correct order to complete the game simulation.
+                        </p>
+
+                    </section>
+
+
+                    <!-- FILE DATA -->
+
+                    <section class="project-detail-section">
+
+                        <h2>External Gift Card Data</h2>
+
+                        <p>
+                            Gift card information is loaded from
+                            <strong>UpdatedGiftCardData.txt</strong> rather than
+                            being hardcoded directly into the Java classes.
+                        </p>
+
+                        <p>
+                            Each entry contains a category, company, monetary
+                            value, and point value.
+                        </p>
+
+                        <p>
+                            Categories in the current data set include
+                            entertainment, restaurants, retail, gas, online
+                            shopping, beauty and spa, and sports.
+                        </p>
+
+                        <p>
+                            Using an external data file separates the game data
+                            from the application logic and makes the collection
+                            easier to update independently of the Java source
+                            code.
+                        </p>
+
+                    </section>
+
+
+                    <!-- DEVELOPMENT PROCESS -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Development Process</h2>
+
+                        <p>
+                            The application was developed in Java using a
+                            multi-class object-oriented structure.
+                        </p>
+
+                        <p>
+                            The project required coordinating several objects
+                            while maintaining a clear separation between data,
+                            player state, card management, gameplay rules, and
+                            console interaction.
+                        </p>
+
+                        <p>
+                            Collections such as ArrayList are used to manage
+                            participants and gift cards, while Java's
+                            Collections and Random utilities support shuffling
+                            and randomized gameplay decisions.
+                        </p>
+
+                    </section>
+
+
+                    <!-- CHALLENGES -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Challenges and Solutions</h2>
+
+
+                        <h3>Coordinating multiple classes</h3>
+
+                        <p>
+                            One challenge was determining which responsibilities
+                            belonged in each class and how those classes should
+                            communicate with one another.
+                        </p>
+
+                        <p>
+                            Separating card data, participants, card storage,
+                            and game control into different classes helped keep
+                            the application easier to understand and maintain.
+                        </p>
+
+
+                        <h3>Managing card state</h3>
+
+                        <p>
+                            The program needed to ensure that cards were drawn
+                            from the shuffled collection in order without
+                            repeatedly returning the same card.
+                        </p>
+
+                        <p>
+                            The Barrel class uses a pointer to track the next
+                            available card and advances that pointer whenever a
+                            card is drawn.
+                        </p>
+
+
+                        <h3>Handling participant elimination</h3>
+
+                        <p>
+                            Participants need to be removed from the active
+                            collection during multiple stages of gameplay.
+                        </p>
+
+                        <p>
+                            During elimination checks, the participant list is
+                            traversed in a way that allows entries to be safely
+                            removed without unintentionally skipping other
+                            participants.
+                        </p>
+
+
+                        <h3>Randomized game behavior</h3>
+
+                        <p>
+                            The game required random behavior while still
+                            following consistent rules.
+                        </p>
+
+                        <p>
+                            Randomization is used for card order, swap
+                            decisions, and the selection of which card is
+                            replaced, while the elimination and winner rules
+                            remain deterministic.
+                        </p>
+
+                    </section>
+
+
+                    <!-- WHAT I LEARNED -->
+
+                    <section class="project-detail-section">
+
+                        <h2>What I Learned</h2>
+
+                        <p>
+                            This project strengthened my understanding of
+                            object-oriented programming and how several Java
+                            classes can work together as one application.
+                        </p>
+
+                        <p>
+                            It provided practical experience with classes,
+                            objects, constructors, encapsulation, ArrayLists,
+                            loops, methods, file input, exception handling,
+                            validation, comparisons, and randomization.
+                        </p>
+
+                        <p>
+                            It also helped me move beyond smaller programming
+                            exercises and think more about program architecture,
+                            class responsibilities, application flow, and the
+                            relationships between different objects.
+                        </p>
+
+                    </section>
+
+
+                    <!-- FUTURE IMPROVEMENTS -->
+
+                    <section class="project-detail-section">
+
+                        <h2>Future Improvements</h2>
+
+                        <ul class="feature-list">
+
+                            <li>
+                                Add a graphical user interface
+                            </li>
+
+                            <li>
+                                Allow participants to choose whether to swap cards
+                            </li>
+
+                            <li>
+                                Add additional gift card categories
+                            </li>
+
+                            <li>
+                                Add configurable game rules
+                            </li>
+
+                            <li>
+                                Add additional player statistics
+                            </li>
+
+                            <li>
+                                Save completed game results
+                            </li>
+
+                            <li>
+                                Add support for multiple rounds
+                            </li>
+
+                            <li>
+                                Add automated unit testing
+                            </li>
+
+                            <li>
+                                Add improved tie-handling rules
+                            </li>
+
+                            <li>
+                                Create an interactive browser-based version
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+
+                </article>
+
+
+                <!-- SIDEBAR -->
+
+                <aside class="project-sidebar">
+
+                    <div class="project-info-card">
+
+                        <h2>Project Information</h2>
+
+                        <dl class="project-facts">
+
+                            <div>
+                                <dt>Project type</dt>
+                                <dd>Java Console Application</dd>
+                            </div>
+
+                            <div>
+                                <dt>Language</dt>
+                                <dd>Java</dd>
+                            </div>
+
+                            <div>
+                                <dt>Programming style</dt>
+                                <dd>Object-Oriented Programming</dd>
+                            </div>
+
+                            <div>
+                                <dt>Key concepts</dt>
+                                <dd>
+                                    Collections, File I/O, Randomization,
+                                    Input Validation
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Data source</dt>
+                                <dd>External text file</dd>
+                            </div>
+
+                            <div>
+                                <dt>Version control</dt>
+                                <dd>Git and GitHub</dd>
+                            </div>
+
+                            <div>
+                                <dt>Interface</dt>
+                                <dd>Console / Terminal</dd>
+                            </div>
+
+                            <div>
+                                <dt>Status</dt>
+                                <dd>Complete</dd>
+                            </div>
+
+                        </dl>
+
+                    </div>
+
+                </aside>
+
+
+            </div>
 
         </section>
 
     </main>
+
+
+    <footer class="site-footer">
+
+        <p>
+            &copy; 2026 Venus Martinez. Built with HTML and CSS and hosted
+            using cloud technology.
+        </p>
+
+    </footer>
 
 </body>
 

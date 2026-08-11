@@ -464,3 +464,15 @@ a {
         flex: 1 1 100%;
     }
 }
+
+/* ================================
+   AWS Portfolio Styles
+================================ */
+
+.project-detail-image {
+    display: block;
+    width: min(100%, 850px);
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 12px;
+}

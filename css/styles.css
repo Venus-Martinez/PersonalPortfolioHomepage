@@ -476,3 +476,149 @@ a {
     margin: 2rem auto;
     border-radius: 12px;
 }
+
+/* =========================================
+CONTACT SECTION
+========================================= */
+
+.contact-container {
+    max-width: 850px;
+}
+
+.contact-intro {
+    margin-bottom: 32px;
+}
+
+.contact-intro h2 {
+    margin-bottom: 12px;
+}
+
+.contact-intro p {
+    max-width: 650px;
+}
+
+/* Contact Form */
+
+.contact-form {
+    background-color: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-top: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f2933;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #1f2933;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Hidden honeypot field for basic spam protection */
+
+.website-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Submit Button */
+
+.contact-submit-button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.contact-submit-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Status Message */
+
+.form-status {
+    margin-top: 16px;
+    min-height: 24px;
+    font-weight: 500;
+}
+
+.form-status.success {
+    color: #15803d;
+}
+
+.form-status.error {
+    color: #b91c1c;
+}
+
+/* GitHub Area */
+
+.contact-github {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #d8dee6;
+}
+
+.contact-github p {
+    margin-bottom: 16px;
+}
+
+/* Responsive Contact Form */
+
+@media (max-width: 700px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-form {
+        padding: 24px 20px;
+    }
+}
